@@ -1,16 +1,23 @@
 package Genericos.tp4;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class main {
     public static void main(String[] args) {
 
-        Lista<String> genericoDeString = new Lista<>();
-        genericoDeString.agregar("hola");
-        genericoDeString.agregar("chau");
-        genericoDeString.imprimirLista(genericoDeString.lista);
+        List<String> genericoDeString = new ArrayList<>();
+        genericoDeString.add("hola");
+        genericoDeString.add("chau");
+        imprimirLista(genericoDeString);
 
-        Lista<Integer> genericoDeInteger = new Lista<>();
-        genericoDeInteger.agregar(123);
-        genericoDeInteger.agregar(321);
-        genericoDeInteger.imprimirLista(genericoDeInteger.lista);
+        List<Integer> genericoDeInteger = new ArrayList<>();
+        genericoDeInteger.add(123);
+        genericoDeInteger.add(321);
+        imprimirLista(genericoDeInteger);
+    }
+
+    public static <T> void imprimirLista(List<T> lista){
+        System.out.println(lista);
     }
 }
